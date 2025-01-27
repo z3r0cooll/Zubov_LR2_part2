@@ -4,10 +4,10 @@
 #include <vector>
 #include <string>
 
-// Функция ввода данных
-std::vector<int> input_data(const std::string& prompt);
+// Функция для ввода данных
+std::vector<int> inputData();
 
-// Пример вычислительной функции
-int sum(const std::vector<int>& numbers);
+// Функция для выполнения вычислений
+int computeSum(const std::vector<int>& data);
 
 #endif // FUNCTIONS_H

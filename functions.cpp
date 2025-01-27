@@ -1,27 +1,20 @@
 #include "functions.h"
-#include <sstream>
 #include <iostream>
 
-std::vector<int> input_data(const std::string& prompt) {
-    std::vector<int> numbers;
-    std::string line;
-    
-    std::cout << prompt;
-    std::getline(std::cin, line);
-    
-    std::stringstream ss(line);
-    int number;
-    while (ss >> number) {
-        numbers.push_back(number);
+std::vector<int> inputData() {
+    std::vector<int> data;
+    int value;
+    std::cout << "Enter numbers (end with 0): ";
+    while (std::cin >> value && value != 0) {
+        data.push_back(value);
     }
-    
-    return numbers;
+    return data;
 }
 
-int sum(const std::vector<int>& numbers) {
-    int total = 0;
-    for (int num : numbers) {
-        total += num;
+int computeSum(const std::vector<int>& data) {
+    int sum = 0;
+    for (int value : data) {
+        sum += value;
     }
-    return total;
+    return sum;
 }

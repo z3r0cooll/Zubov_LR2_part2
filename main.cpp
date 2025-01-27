@@ -2,11 +2,8 @@
 #include "functions.h"
 
 int main() {
-    std::string prompt = "Введите числа через пробел: ";
-    std::vector<int> data = input_data(prompt);
-    
-    int result = sum(data);
-    std::cout << "Сумма чисел: " << result << std::endl;
-
+    std::vector<int> data = inputData();
+    int sum = computeSum(data);
+    std::cout << "Sum of elements: " << sum << std::endl;
     return 0;
 }
