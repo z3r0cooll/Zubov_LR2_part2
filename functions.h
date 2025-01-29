@@ -1,13 +1,28 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+///
+#ifndef ZAITSEV_MATHTASK_H
+#define ZAITSEV_MATHTASK_H
 
-#include <vector>
 #include <string>
 
-// Функция для ввода данных
-std::vector<int> inputData();
+// Function to check if the input is a valid integer
+bool UserInput(const std::string& input) {
+    if (input.empty()) return false;
+    try {
+        std::stoi(input);
+        return true;
+    } catch (...) {
+        return false;
+    }
+}
 
-// Функция для выполнения вычислений
-int computeSum(const std::vector<int>& data);
+// Function to calculate the remainder of Q divided by P
+int CalcRemainder(int Q, int P) {
+    return Q % P;
+}
 
-#endif // FUNCTIONS_H
+// Function to calculate the quotient of Q divided by P
+int CalcQuotient(int Q, int P) {
+    return Q / P;
+}
+
+#endif // 
