@@ -1,6 +1,6 @@
 ///
-#ifndef ZAITSEV_MATHTASK_H
-#define ZAITSEV_MATHTASK_H
+#ifndef unctions.h
+#define unctions.h
 
 #include <string>
 

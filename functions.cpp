@@ -1,20 +1,38 @@
-#include "functions.h"
+// main.cpp
 #include <iostream>
+#include <string>
+#include "functions.h"
 
-std::vector<int> inputData() {
-    std::vector<int> data;
-    int value;
-    std::cout << "Enter numbers (end with 0): ";
-    while (std::cin >> value && value != 0) {
-        data.push_back(value);
-    }
-    return data;
-}
+using namespace std;
 
-int computeSum(const std::vector<int>& data) {
-    int sum = 0;
-    for (int value : data) {
-        sum += value;
+int main() {
+    string str_input;
+
+    // Input Q
+    cout << "Input Q: ";
+    getline(cin, str_input);
+    while (!UserInput(str_input)) {
+        cout << "Input Q: ";
+        getline(cin, str_input);
     }
-    return sum;
+    int Q = stoi(str_input);
+
+    // Input P
+    cout << "Input P (less than Q): ";
+    getline(cin, str_input);
+    while (!UserInput(str_input) || stoi(str_input) >= Q) {
+        cout << "Input P (less than Q): ";
+        getline(cin, str_input);
+    }
+    int P = stoi(str_input);
+
+    // Calculate remainder and quotient
+    int remainder = CalcRemainder(Q, P);
+    int quotient = CalcQuotient(Q, P);
+
+    // Output results
+    cout << "Remainder of Q / P is " << remainder << endl;
+    cout << "Quotient of Q / P is " << quotient << endl;
+
+    return 0;
 }
